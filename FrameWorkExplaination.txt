@@ -1,0 +1,43 @@
+Framework:
+Page Object Model Design Pattern with the Hybrid Framework:
+
+Tools we used for this framework:
+1. TestNG-> Unit Testing Framework for writing the test cases
+2. Maven-> Project Management tool. Based on the concept of a project object model (POM), Maven can manage a project's build
+3. Jenkins-> It is used for continous integration tool
+4. Sikuli-> Window based applications. Like for uploading and downloading
+5. AutoIT-> Window based applications
+6. Extent Reports-> 
+
+Utility We Used
+1. Excel Utility
+
+Reporting: 
+TestNG-> Html 
+Extent Reporting
+
+Framework Structure:
+1. TestBase-> Browser Launch, Url, CookiesDelete, Synchronization(Implicit,Explicit), PropertyFileDrive, Screenshot
+2. Config-> Browsername, Url, Username/Password
+3. ExtentReportListner-> Generic for ExtentReports
+4. TestData-> App from where we drive the data: Excel
+5. TestDataDriven-> Excel Utility
+6. TestUtil-> 
+CustomListner: Listner which implements ITestListner, 
+This is a testNG Listner. Using TestNG listeners we could generate logs and customize TestNG Reports.
+WebEventListner: Print the logs for every webelement activity
+7. Pages-> For every page we will write the scripts using page object design pattern
+8. Analyzer-> For retry analyzer
+9. Test-> Run the scripts from here
+10. Resource-> Xml file will stored here. This is used to run the customized scripts
+11. External Jars->BrowserDriver
+
+
+Output:
+Test-output:
+1. RetryFailedTestCaseSuite
+2. TestNG reports-> Emailablereport.html, index.html
+3. TestReports-> Extent Reports
+4. Screenshots->For failed cases
+
+

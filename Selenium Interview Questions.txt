@@ -1,0 +1,95 @@
+Selenium:
+Different types of Element Locators: 
+Xpath related questions:
+Css related questions:
+Relative vs Absolute xpath
+Javascript executor: 
+Different wait commands: Implicit, Explicit, Fluent
+Exceptions in selenium: 
+Stale Element Exception
+Find Element vs FindElements
+How to get the List of WebElements
+getText vs getAttribute
+Thread.sleep vs setSpeed
+How to handle radiobuttons/checkboxes 
+IsDisplayed vs IsSelected vs IsEnabled
+getMethods()
+getWindowHandle() vs getWindowHandles()
+Handling Dropdown, ContexClick, Iframes, 
+Click() and submit() methods
+Handle Alerts, Browser popup
+Different navigate commands
+Screenshot in selenium
+Handle MouseHover
+Action class
+ a.KeyboardEvents
+	->sendKeys(keysToSend) 
+	->keyDown(theKey)
+	->keyUp(theKey)
+ b. MouseEvents
+	->Click()
+	->DoubleClick()
+	->ContextClick()
+	->clickAndHold()
+	->dragAndDrop(source, target)
+	->moveToElement(toElement)
+	->release()
+Launch the different browsers
+GeckoDriver
+ExcelRead and ExcelWrite
+DatabaseConnectivity with Selenium
+How to handle window based applications in selenium: Third party tools like AutoIt and Sikuli
+
+
+
+TestNG:
+1. TestNG
+2. TestNG Annotation and Testng annotion order
+3. Paramaterization, prioritization, Dependency, Dataprovider, Factory
+4. Return type of Factory-> Object
+5. TestNG Listners
+->ITestListner
+	Methods of ITestListner:
+	OnStart- OnStart method is called when any Test starts.
+	onTestSuccess- onTestSuccess method is called on the success of any Test.
+	onTestFailure- onTestFailure method is called on the failure of any Test.
+	onTestSkipped- onTestSkipped method is called on skipped of any Test.
+	onTestFailedButWithinSuccessPercentage- method is called each time Test fails but is within success percentage.
+	onFinish- onFinish method is called after all Tests are executed.
+->ISuiteListener
+->IReporter
+->IAnnotationTransformer
+6. WebDriverEventListener:
+	-->EventFiringWebDriver
+7. Assertions:
+	a. HartAssert
+	b. SoftAssert
+Assert Methods:AssertEquals
+	       AssertTrue
+	       AssertFalse
+	       AssertNotEquals
+8. TestNG xml
+
+Maven:
+Maven Architecture
+Maven life cycle
+
+Version Control:
+GIT/BitBucket
+
+Framework:
+1. Pageobject model design pattern
+2. DataDriven
+3. Hybrid
+4. Cucumber
+
+Good to know about your framework architecture:
+Most commonly used pageobject model and cucumber framework
+s
+
+**Not so important**
+Jenkins:
+1. How to integrate the testcases through jenkins
+2. Re
+
+	

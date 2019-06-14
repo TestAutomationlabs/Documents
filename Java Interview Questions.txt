@@ -1,0 +1,79 @@
+
+Java Interview Questions:
+Java 8 and Java 9 features. Specifially its good to know about "stream"
+Will prefer you to go and read the javabeginnersbook once. Most of the questions will be arised with these sites only
+1. jdk vs jvm vs jre
+2. Static vs heap memory
+3. Static-> static block, static variables, static methods,
+4. If you define static block with in a program which one is execute first-> ans: static block
+5. Why static block is used?
+6. Non static->
+7. Constructor->Default, parametrized, singleton
+8. Where objects will be stored.? and expain the lifetime of objects
+9. can we change the static variable once it initilized.?
+10. final-> final variable, final class, final method
+11. can final class can be extendable, can final methods can be overrdinen, can final variables can be reinintilized.?
+12. abstract vs interface.?
+13. What is the use of interface over abstract.?
+14. Exception Handling-> try, catch, final, throws, throws
+15. Throw vs throws
+16. final vs finally vs finalize
+17. which method is invoked in garbage collector.?
+18. which method is used to skip the final block in exception handling-> ans: System.exit();
+19. Strings->why string is immutable in java.?
+20. String buffer vs String builder
+21. Better to know the string methods
+22. String Compare-> 3 ways: a. CompareTo
+							 b. By == operator
+							 c. By Equals
+23. Convert Integer to String, String to Integer
+24. What do you mean by thread safe
+25. Collections-> 
+a. Collection architecture
+b. Why maps are not part of collection
+c. set vs list vs map
+d. arraylist vs linkedlist
+e. collection vs collections
+f. haset vs linkedhaset vs treeset
+g. hasmap vs linkedhasmap vs treemap
+h. iterator vs list iterator
+i. iterator vs enumerator
+j. array vs arraylist
+k. Concurrent modification exception/fail-fast
+26. overloading vs overiding
+27. Polymorpism-> static(compiletime) polymorphism and runtime polymorphism
+28. Encapsulation
+29. Typecasting-> upcasting and downcasting
+30. Wrapper class? why it is necessary in java.?
+
+Java programs:
+1. Reverse of a string and number
+2. Palindrome->Both numbers and String
+3. Reverse each word of a string-> input: I live in india
+							     output: I evil ni aidni
+4. Revers of a sentences->input: I live in india
+						  output: India in live I
+5. Alphabetical order of string: inputString={"madras","delhi","mumbai","banglore","kolkota","hyderabad"}
+								 output: banglore delhi hyderabad kolkota madras mumbai
+6. Fibonacci series
+7. Prime number
+8. Print the duplicate string: input: sagar, output: a
+9. Delete the duplicate string-> input: sagar
+                                 output: sgr
+10. Common elements between two array
+11. Common elements in a single array
+12. Extract only numbers from a given string
+13. Sort the numbers/string
+14. Swap the string, numbers
+15. Swap the string without using temprovary(third)variable
+16. Swap the number without using temprovary(third)variable
+17. Biggest/Smallest of a given array
+18. Move all zeroes to last-> input: int[] arr = {5, 1, 6, 0, 0, 3, 9, 0, 6, 7, 8, 0,0,12, 10, 0, 2,0}; 
+                              output: 5,1,6,3,9,6,7,8,12,10,2,0,0,0,0,0,0,0
+19. Number pattern, * pattern
+20. Capitilizing the first string-> input: welcome to india
+									output: Welcome To India
+21. Sorting using arraylist
+22. Duplicate using arraylist
+23. Occurences with count using hashmap-> inputstring: abbcccdddeffghh
+                                          output: a->1, b->2, c->3, d->2, e->1, f->2, g->1, h->2

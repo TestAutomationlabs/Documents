@@ -1,0 +1,99 @@
+gmail:testautomation4selenium
+uname: test4selenium
+password: test4selenium
+
+gmail: uday4automation@gmail.com
+uname:uday4automation
+pwd: test4selenium
+
+GitAccount: 
+Username: TestAutomationlabs
+pwd: test4selenium
+
+GitAccount: 
+Username: Uday4Selenium
+email: uday4automation@gmail.com
+pwd: test4selenium
+
+
+
+Softwares Download:
+1. FOR WINDOWS USERS, PLEASE INSTALL GIT ON YOUR WINDOWS MACHINE. 
+REFER THIS URL: https://www.atlassian.com/git/tutorials/install-git#windows
+
+----------Install the GitWindows----------
+1. Type the command To iniitilize the git-> git init
+o/p: It will show the Initilized empty git repository in the path-> C:/Users/SLANKEGO/.git/
+Note: This is a hidden file and it wont be see in that path
+
+To see the file just type the command
+a. ls -alt-> you can see the git file 
+OR
+b.Open File Explorer -> Tap on view-> Check the hidden checkbox
+
+2. Type the command to register with this particular repository
+git init-> initilized empty git repository
+
+3. Add the remote url of your git-> git remote add origin https://github.com/TestAutomationlabs/STP.git
+
+4. Check the current status-> Whatever the files to be added to commit
+The items to be shown in red color means which is pending to commit
+
+4. To add the complete project directory-> git add . 
+5. Again check the status using the command -> git status
+changes are appeared in green color
+6. Now we have to commit the code
+
+
+
+Create the repository from the git
+Open eclipse-> project properties-> type the command and navigate to the specified folder location
+cd C:/Users/SLANKEGO/eclipse-workspace/Demo4Git
+git init
+git remote add origin https://github.com/TestAutomationlabs/STP.git
+git status-> Added changes are appeared in green color i.e, whichever files is ready to commit
+git add .-> Files are added to repository
+git commit->git commit -m "Demo3 has commit for my selenium" 
+Now we have to push the code
+git push origin master
+
+
+Git codes
+
+
+To Update the local git repo			: git add .
+To commit the changes at local			: git commit -m "Message"
+To push the commit to github			: git push origin master
+To clone a repo from github 			: git clone (sharing URL)
+To know the current status of local repo	: git status
+To check the push status 			: git log
+To list the branches 				: git branch
+To switch to other branch 			: git checkout (branch name)
+To revert a push (reset to previous version)	: git push -f origin HEAD^:master
+						  git push -f origin HEAD^:branchname
+
+
+For cloning the code:
+Create the local folder in your system
+Navigate to the git repository and copy the url 
+Come to the git bsh command prompt and navigate to the folder path which you have created
+And clone the code from the git repository using git clone "Repostitory url of git" command
+
+Then import the code from the local repository to eclipse for the first time if you are creating new project
+
+
+
+For pulling the code:
+1. Navigate to the project path of eclipse from the git bsh command
+2. Type the command> "git pull origin master" for the pulling the code from the git repository to the eclipse project path
+Type the command git pull "url of git repository"-> code will be copied to the local folder path
+
+
+
+
+Pending:
+git clone
+ SSHkey_> need putty to download
+
+
+

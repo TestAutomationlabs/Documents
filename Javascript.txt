@@ -1,0 +1,50 @@
+Refrence URLs:
+https://www.softwaretestingmaterial.com/scroll-web-page-using-selenium-webdriver/
+
+Byname:
+document.getElementsByName("login")[0].click()
+document.getElementsByName("userName")[0].value="sagar"
+document.getElementsByName("btnLogin")[0].click()
+
+Byclassname:
+document.getElementsByclassName("login")[0].click()
+document.getElementsByclassName("userName")[0].value="sagar"
+document.getElementsByclassName("btnLogin")[0].click()
+
+Byid:
+document.getElementById("gnavtabs")
+document.getElementById("gnavtabs").click()
+
+href:
+document.getElementsByClassName("a").href='https://gadgets.ndtv.com/'
+document.getElementById("myAnchor").href;-->Returns href
+
+Title:
+String stext=js.executeScript("return document.title;").toString();
+System.out.println("Stext is"+stext);
+
+URL:
+String sText =  js.executeScript("return document.URL;").toString();
+System.out.println(sText);
+
+Scroll:
+//Vertical scroll - down by 500  pixels
+js.executeScript("window.scrollBy(0,500)");
+// for scrolling till the bottom of the page we can use the code like
+//js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
+To click a Button in Selenium WebDriver using JavaScript
+js.executeScript("document.getElementById('enter your element id').click();");
+//or
+js.executeScript("arguments[0].click();", loginButton);
+
+To find hidden element in selenium using JavaScriptExecutor
+js.executeScript("arguments[0].click();", element);
+
+Refresh the browser:
+js.executeScript("history.go(0)");
+
+
+
+
+hrudanand: 9040075310

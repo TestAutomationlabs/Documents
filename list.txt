@@ -1,0 +1,31 @@
+public void verifySuccessStoriescategoryBox() throws IOException, Exception{
+		List<WebElement>dropdown = driver.findElements(By.xpath("//select[@class='form-control']//option"));
+		
+		System.out.println("Click on the select dropdown");
+		System.out.println(dropdown.size());
+		for(int i=0; i<dropdown.size();i++){
+			System.out.println(dropdown.get(i).getText());
+			Thread.sleep(3000);
+			
+	
+		if(dropdown.get(i).getText().contains("Success Stories"))
+			{
+			Thread.sleep(2000);
+			dropdown.get(i).click();
+			System.out.println("Element has clicked");
+			Titletextbox=ExcelUtility.getCellData("PostDetails", 1, 0);
+			Title.sendKeys(Titletextbox);
+			
+
+**/target/surefire-reports/testng-results.xml
+
+channel stopped
+[STP_Suite] $ cmd /c call C:\Users\SLANKEGO\AppData\Local\Temp\jenkins358310874633300283.bat
+
+C:\Users\SLANKEGO\.jenkins\workspace\STP_Suite>exit 0 
+TestNG Reports Processing: START
+Looking for TestNG results report in workspace using pattern:  **/target/surefire-reports/testng-results.xml
+Did not find any matching files.
+Finished: SUCCESS
+
+C:/Users/SLANKEGO/Git/test-automation-stp/target/surefire-reports/testng-results.xml

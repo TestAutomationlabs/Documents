@@ -1,0 +1,25 @@
+Java/Selenium Important Urls:
+
+Date Related:
+https://javarevisited.blogspot.com/2017/02/17-examples-of-calendar-and-date-in-java.html
+https://www.javatpoint.com/java-util-calendar
+
+public void verifyConnectionTab() {
+
+		try {
+			if (!ConnectionTab.isDisplayed()) {
+				System.out.println("ConnectionTab is not present");
+				
+			} else {
+
+				//ConnectionTab.click();
+				System.out.println("ConnectionTab is present");
+				
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Connection Tab is not displayed");
+		}
+
+	}

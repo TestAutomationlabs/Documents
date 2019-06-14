@@ -1,0 +1,303 @@
+To initilization of jenkins.
+java -jar jenkins.war
+
+password: e1c606f5c55742e6bc65d47eea9f6169
+or
+C:\Users\SLANKEGO\.jenkins\secrets\initialAdminPassword
+
+localhost:8080
+
+Install suggested plugins
+
+uname: TestAutomationlabs
+Fullname: TestAutomationlabs
+email: testautomation4selenium@gmail.com
+Jenkinsurl: http://localhost:8080/
+How to change the port: java -jar jenkins.war --httpPort=9090
+
+Preconfiguration Activity:
+1. JDK-> JDK configuration done
+2. MAVEN-> MAVEN configuration done
+3. GIT-> Git path has not completed
+4. Reports-> TestNG done, Extent Reports pending
+
+
+To kill the jenkins process;
+C:\Program Files\Java\jdk1.8.0_191\bin>netstat -ano|find "8080"
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       5256
+  TCP    [::]:8080              [::]:0                 LISTENING       5256
+
+C:\Program Files\Java\jdk1.8.0_191\bin>taskkill /PID 5256 /F
+SUCCESS: The process with PID 5256 has been terminated.
+
+
+If UI is not coming properly
+Sript Console: 
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
+
+----------------------------------------------------------------------------------
+
+AutomationStepByStep Raghav pal
+
+
+
+uname: admin
+initial pwd: 3121b79228f540a985f353790b8e547d
+http://localhost:8081/
+
+Download jenkins.war
+Place it in folder in windows
+Naviagate to the folder from the command prompt
+Type the command "java.jar-jenkins.war" from the command prompt-> Now jenkins is started
+Type the  http://localhost:8080 from the browser to start the jenkins.
+Install the plugins
+
+
+How to setup jenkins on tomcat
+Step 1 : Download Tomcat 
+
+Step 2 : Unzip and place tomcat folder at any location
+
+Step 3 : Copy/Place the jenkins.war file inside tomcat/webapps folder
+
+Step 4 : Goto commandpromt (cmd) - windows  |  terminal - mac
+  - goto tomcat/bin directory
+  - make all files executable : chmod +x *.sh
+
+In case of windows this command will not work. This step might not be needed if you are on windows. Else you can right click on the file/folder goto security tab and change the permissions.
+
+Step5: 
+Start Tomcat
+   A. Goto Tomcat/bin - click on startup.bat or startup.sh
+   B. Goto cmd - Tomcat/bin  - startup.bat or startup.sh
+   C. Goto cmd - Tomcat/bin  - catalina.bat start
+
+Step 6 : Stop Tomcat
+   A. Goto Tomcat/bin - click on shutdown.bat or shutdown.sh
+   B. Goto cmd - Tomcat/bin  - shutdown.bat or shutdown.sh
+   C. Goto cmd - Tomcat/bin  - catalina.bat stop
+
+Step 7 : How to change default port 8080
+   - Goto Tomcat - Conf
+   - Edit server.xml
+   - Change port number at connector port
+   - save and restart tomcat
+
+Now start with the different port number i.e.,
+localhost:9090--> Tomcat will get started
+Also note that to start the jenkins from the tomcat server.
+As we placed the jenkins.war file in the tomcat/webapps. so the jenkins is launching from the tomcat server.
+To launch the jenkins now
+--> localhost:9090/jenkins
+
+Now jenkins is not running in the standalone application. It is running in the tomcat server
+
+Also we can run the standalone jenkins as well. To do this navigate to the jenkins folder where it is located
+i.e.,
+C:\Users\SLANKEGO\Desktop\Automation\Jenkins_Raghav>
+Now we have to run the jenkins with different port cz the jenkins port with the tomcat server is already running.
+So in this case we have run with different port. To do this
+
+java -jar jenkins.war --httpPort=8090
+
+-------------------------------------------------------------------------------------
+
+Where we have to configure the ip address instead of localhost in jenkins
+Manage Jenkins-> Configure System-> Jenkins Location->Jenkins Url: Give the ip address of system instead of localhost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+
+How to create users+Manage users+ Assign roles:
+1. Manage Jenkins-> Create User-> Give username, password and email ids
+2. Configure the users-> Click on the Username and select the configure from the dropdown
+and then change the password,SSH keys etc
+3. Create and manage user roles:
+First way:
+a. Download the role-strategy plugin from
+https://updates.jenkins-ci.org/download/plugins/role-strategy/
+b. copy the role-strategy plugin and paste it to jenkins home directory:
+C:\Users\SLANKEGO\.jenkins\plugins
+c. Restart jenkins
+d. Then go to manage jenkins-> manage plugins-> Advanced->upload plugin and select the hpi file
+
+Second way:
+a. Go to mange jenkins-> manage plugins-> Download Role based autorization strategy plugin and restart jenkins
+4. Manage Jenkins-> configure global security->
+a. Enable security should be checked
+b. In Autorization section choose "Role-based strategy": It will comes only when the role based autorization 
+has installed in jenkins
+5. Then click on apply and save
+6. Then Manage jenkins-> Manage and assign roles(It will come only when we choose role based autorization
+in configure globals security under autorization section)
+7. Navigate to Manage roles:
+a. Global roles-> Default admin will be there with the roles.
+Also you can add another role and give the permission 
+b. Project roles-> Any developer or tester can access
+c. Apply and save
+8.Navigate to Assign roles-> 
+a. Add user which you have created and select the project which you had added
+b. Project/Item roles-> Add user and select the designation of user which you had added
+9. Now you create the Project Starts With Dev and Test as we created the configuration of Developer 
+can view the projects which starts from "Dev" and Tester can view the projects starts from the "Test"
+
+User created:
+testuser/test@123
+testuser2/test@123
+devuser1/dev@12345
+
+--------------------------------------------------------------------------------
+Window Batch command:
+Starts with echo always: i.e., echo %DATE%
+echo %DAY%
+--------------------------------------------------------------------------------
+Chain Job executions:
+After one project execution is complete the next project execution takes place
+
+Step1:
+Create the projects-> Test1, Test2, Test3
+Step2:
+After creating the projects-> Go to configuration for Test2 project
+Step3: Go to Build Triggers and  check the " Build after other projects are built" and give the Projects to watch as  "Test1" and select
+any option according to your requirement
+Expln: This will help us after execution of Test1 project the Test2 project will get executed cz the configuration has created in the Test1 project
+Step4:Suppose if you want to execute the "Test3 projects" after Test2 projec has completed. You've to configure in the Post-Build Actions
+PostBuildActions->Build Other Projects->Projects to build "Test3" and select any option according to your requirement
+
+Note:
+1. After doing this configuration go to the project dashboard of Test1 and see the downstream projects as "Test2"
+2. Same way for Test2-> Upstream: Test1
+			Downstream: Test3
+3. Sam way for Test3->	Upstream: Test2
+
+------------------------------------------------------------------------------
+Catlight-> Status notifier for developers
+Why catlight?
+*No need to be in the jenkins server to monitor
+*It will popup your desktop and will see the status(notified) we need to know
+
+When you are having and managing multiple jobs in jenkins, It is verty difficult to go everytime on the server and go to the dashboard
+and check for the notifications and changes for every job.
+
+Step1:
+Download catlight from the catlight link
+Step2:
+Tap on the catlight application once it get installed
+Step3:
+Configure your server, We will using jenkins server here
+a. We will giving url of jenkins
+ex: http://localhost:8090/
+b. Use creditianls:
+Username/Password: admin/3121b79228f540a985f353790b8e547d
+c. Now you can see all the projects which you created in jenkins
+d. Click on All projects to monitor and save it
+e. Once if you click on save button, you can see all the project previous status
+Step4:
+To verify the catlight, Open the jenkins and run any project. Once the project is run successfully, You get notified
+in desktop from the catlight as "?"
+----------------------------------------------------------------------------------------------------------
+
+Mail configuration:
+1. Manage Jenkins-> Configure System-> Email Notification
+2. Configure our email in Email Notification -> SMTP Server
+3. For gmail "smtp.gmail.com", For any other mail server find the smtp server in the internet and provide the details
+4. Then go to the Advanced section and we will get some extra fields:
+a. Check the Use SMTP Aunthentication
+b. username:Any of your email the mail will be send(testautomation4selenium@gmail.com)
+c: Password: Password of your email9(test4selenium)
+d: Use SSL incase you're using gmail
+e: SMTP port: 465 for gmail
+f: Check Test configuration by sending test e-mail
+g: Test email recepient: Give any email for which you have to receive
+	And then hit the Test Recepient email
+
+----------------------------------------------------------------------------------------------------------------
+Delivery Pipeline:
+Step1: We have to create the multiple projects and add the (upstream/downstream) jobs
+Step2: Create sample jobs: Test1, Test2, Test3
+Step3: Now goto the second job(Test2) and navigate to configure and in the build trigger section
+check the "build after other projects are built" and give the "Test1" in the projects to watch and then apply
+Step4: Also you can navigate to the third job(Test3) and do the same configuration
+Now these three jobs are chained, Whenever you run the first job(Test1) the other two jobs(Test2, Test3) should get executed.
+
+Step5: Now we have to install the "Delivery Pipeline plugin" from the Manage jenkins->Manage Plugins and restart the jenkins
+Step6: After installation of "Delivery Pipeline plugin" we have to add delivery pipeline view in our jenkins.
+i.e., Goto the Jenkins Dashboard->Click on the '+' icon->Select Delivery pipeline view->Give the ViewName and save it
+Step7: Now in the Pipeline page-> Go to the pipelines section and add the component-> Give the Pipeline name and also 
+add the Initial Job:Test1 and apply and save it
+It will give the past runs
+Step8: For other changes Goto the Edit view->
+a. Number of pipeline instances per pipeline: Give any number
+It will show the runs upto that number
+b. Enable start of pipeline build: Select it and apply
+The timer(pipeline) icon will get visible in the pipeline dashboard, You can trigger the pipeline right from the pipeline dashboard
+c. Enable rebuild: Select it and apply
+Now we're getting the refresh(rebuild) icon for the pipeline projects, If we click on that button those project will get triggered successfully
+d. Show build time: Select it and apply
+It will show the build time
+--------------------------------------------------------------------------------------------------
+Build Pipeline:
+Step1: Create the jobs and chain(upstream/downstream) them in jenkins
+Step2: Install Build pipeline plugin from the manageplugins
+Step3: Add build pipeline view in jenkins
+i.e., Goto the Jenkins Dashboard->Click on the '+' icon->Select Build pipeline view->Give the ViewName and save it
+Ex: "BuildPipelineTest" as ViewName
+Step4: In the PipeLineFlow section select intial job as "Test1"  in upstream/downstream config
+Note: It will show only last run
+Step5: Configure->No of displayed builds as 3(any number) under display options section
+It will show last 3 build runs
+Step6: Explore the options:
+Configure the console output-> Select the console output link style as "New window/This window"
+
+
+
+* At a high level you can say Build pipeline has a smaller scope in terms of the entire process of software dev and delivery
+whereas delivery pipeline has a much broader scope. Also when we say delivery, build pipeline will be one of its components.
+Build Pipeline provides a view of the upstream and downstream jobs setup for the build process (typically)
+Whereas Delivery Pipeline gives the visualization of the complete Delivery Process that may include Build, Deploy, Test.
+In the delivery pipeline view, you can see each of these sections in a separate box.
+
+
+
+
+
+CommandLine Interface:
+1. Easier
+2. Faster
+3. Memory management less than UI
+4. Continous Integration 
+
+Step1: Start Jenkins
+Step2: Manage Jenkins-> Configure Global Security-> Make sure that Enable security is checked and apply and save
+Step3: Goto http://localhost:8080/cli--> Jenkins cli window comes and then click the download option to download 
+the cli jar and place the location in the system
+Step4: test the jenkins command line is working
+Step5: Navigate to the folder where exactly jenkins cli is there
+Step 6: Copy the command from the the jenkins UI(http://localhost:8080/cli)--> 
+java -jar jenkins-cli.jar -s http://localhost:8080/ help and type it in command line
+
+Note: For safestart 
+opy the command from the the jenkins UI(http://localhost:8080/cli)--> 
+java -jar jenkins-cli.jar -s http://localhost:8080/ safe-restart
+** If you get any error like "Anonymos is missing the overall read/write permission"
+Manage Jenkins-> Configure Global security-Select "Anyone can do anything" from the Autorization apply and save it
+
+Now you enter the same command to restart
