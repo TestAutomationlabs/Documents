@@ -1,0 +1,92 @@
+GIT:
+checkin->push
+checkout->pull
+
+Github is a hosting service(website) and in that service you can create no of git repositoty
+GIT is tool 
+GIT is Source control management
+Also you can say github is a site provides a space to the git
+
+
+Sequence:
+git init
+git add origin<url>
+git status
+git add .
+git status
+git commit -m "Test"
+git push origin master
+
+Steps:
+1. Create the Git repository
+2. Navigate the project folder in desktop and check whether .git file is der.
+If der git is initilized
+3.Open the git bash and Navigate to the specific folder and  Type the command:
+ git init and press enter
+Note: And you will see the empty repository has been created in the location with the .git file
+This is a hidden file and you wont be able to see. You can see in the view option
+To view from the command(bsh)-> ls -alt
+
+4. Now your git repository is available in the remotely(i.e., In the git website)
+Type the command to register in the git repository(i.e., link is done from git repository to local)
+git remote add origin https://github.com/TestAutomationlabs/FreeCRM.git	
+
+5. Now youve to commit our code:
+To check you just type the command-> git status
+you may see in red color for the changes to commit
+
+6. Now type the command to add the files : git add .
+Now you see everything is coming in green color
+
+7. Now all these files are ready to commit. Before commit(checkin/push) the code you have to commit
+Type the command now:
+git commit -m "first commit for my FreeCRM code"
+Now your code is commited. 
+Git commit is used to save changes to your local repository
+
+8. Push the code to repository:
+git push origin master
+And now if master -> master shows den you may come conclude that it has been moved to master branch
+Now you go to your repository and see the code has imported
+
+9. Clone the code:
+Create one folder by using mkdir C:\Users\SLANKEGO\Desktop\seleniumcourse
+Cloning is happen only for the first time. i.e., cloning the code base
+git clone https://github.com/TestAutomationlabs/ProgressTest.git
+Now you can see cloning is done or not by navigating to the particular folder
+"C:\Users\SLANKEGO\Desktop\seleniumcourse" 
+
+10. Pull the code
+If anyfile had changes then youve to pull the code from the repository from the below command:
+First goto the project location from the eclipse
+git pull origin master
+And you may see like "1file changed, 1insertion"
+
+Then again try to pull the code from the git repostitory to the eclipse project location path
+git pull origin master
+It shows as "Already upto date"
+
+
+
+UI:
+
+1. First: Create the Repository in the git
+1. Open Eclipse in the java view-> Import projects->Import projects from git->Existing local repository
+2. Open the Perspective and Search the Git Reposotries->Click on Git Repository
+3. Make sure that you had created the folder in the local repository
+4. No you click on the clone icon and automatically fill the details like
+Host, URI, Repository path, User/Pwd
+5. Now navigate to the local repostitory where you can find the project details
+6. Whatever the changes you have to make in the eclipse just do it
+7. Once the changes has been over, Immediately you may see those in the Unstaged changes 
+8. Move all those to staged changes-> Once it moved to staged changes which means it has been added the local repository
+9. Now type the commit message and then click on the commit and push if you want to push the same to repository
+10. Also note that while pushing the pushid(ex: 46effgh) has created the same will be updated in the git
+11. Then navigate to the git and you may see the latest commits in the commit tab, click on the commit to see the changes
+12. You may create the branches on right click the braches option and switch to branch-> you can give the branch name
+13. Do changes in the eclipse and give commit and push
+14. Keep in mind-> Don't select configure upstream for push and pull and Force overwrite branch in remote
+15. After doing this you may view in the GIT repository those branches and changes
+16. Click on the branch->Click on New Pull Request->Create Pull Request
+17. Click on Merge Request
+
